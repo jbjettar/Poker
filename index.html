@@ -1,69 +1,9 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>Campeonato de Poker</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div>
-      <h1>Campeonato de Poker</h1>
-      <p>Ranking anual por pontuação</p>
-    </div>
-    <button id="exportBtn">Exportar</button>
-  </header>
-
-  <nav>
-    <button class="tabBtn active" data-tab="ranking">Ranking</button>
-    <button class="tabBtn" data-tab="nova">Nova etapa</button>
-    <button class="tabBtn" data-tab="historico">Histórico</button>
-    <button class="tabBtn" data-tab="jogadores">Jogadores</button>
-  </nav>
-
-  <main>
-    <section id="ranking" class="tab active">
-      <div class="card">
-        <h2>Ranking do ano</h2>
-        <div id="rankingList"></div>
-      </div>
-    </section>
-
-    <section id="nova" class="tab">
-      <div class="card">
-        <h2>Registrar etapa</h2>
-        <label>Data <input id="eventDate" type="date"></label>
-        <label>Nome <input id="eventName" placeholder="Ex.: Etapa 17"></label>
-        <label class="check"><input id="christmas" type="checkbox"> Poker de Natal — pontos em dobro</label>
-      </div>
-      <div class="card">
-        <h2>Resultados</h2>
-        <p class="hint">Compras adicionais não incluem o cacife inicial de R$ 100.</p>
-        <div id="resultsForm"></div>
-        <button class="primary" id="saveEvent">Salvar etapa</button>
-      </div>
-    </section>
-
-    <section id="historico" class="tab">
-      <div class="card">
-        <h2>Histórico</h2>
-        <div id="historyList"></div>
-      </div>
-    </section>
-
-    <section id="jogadores" class="tab">
-      <div class="card">
-        <h2>Jogadores</h2>
-        <div id="playersEdit"></div>
-        <button class="primary" id="savePlayers">Salvar jogadores</button>
-        <button class="danger" id="resetAll">Apagar tudo</button>
-      </div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111827"><title>Campeonato de Poker</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"></head><body>
+<header><div><h1>Campeonato de Poker</h1><p>Ranking anual por pontuação</p></div><button id="exportBtn">Backup</button></header>
+<nav><button class="tabBtn active" data-tab="ranking">Ranking</button><button class="tabBtn" data-tab="nova">Etapa</button><button class="tabBtn" data-tab="historico">Histórico</button><button class="tabBtn" data-tab="jogadores">Jogadores</button></nav>
+<main>
+<section id="ranking" class="tab active"><div class="card"><h2>Ranking geral</h2><div id="rankingList"></div></div><div class="card"><h2>Rankings de colocações</h2><div class="subtabs"><button class="placeBtn active" data-place="wins">Vitórias</button><button class="placeBtn" data-place="seconds">2º lugares</button><button class="placeBtn" data-place="thirds">3º lugares</button><button class="placeBtn" data-place="podiums">Pódios</button></div><div id="placementList"></div></div></section>
+<section id="nova" class="tab"><div class="card"><div class="titleLine"><h2 id="formTitle">Registrar etapa</h2><button id="cancelEdit" class="mini hidden">Cancelar edição</button></div><label>Data <input id="eventDate" type="date"></label><label>Nome <input id="eventName" placeholder="Ex.: Etapa 17"></label><label class="check"><input id="christmas" type="checkbox"> Poker de Natal — pontos em dobro</label></div><div class="card"><h2>Resultados</h2><p class="hint">Compras adicionais não incluem o cacife inicial de R$ 100.</p><div id="resultsForm"></div><div id="cashCheck" class="cashBox"></div><button class="primary" id="saveEvent">Salvar etapa</button></div></section>
+<section id="historico" class="tab"><div class="card"><h2>Histórico de etapas</h2><div id="historyList"></div></div></section>
+<section id="jogadores" class="tab"><div class="card"><h2>Jogadores</h2><div id="playersEdit"></div><button class="primary" id="savePlayers">Salvar jogadores</button></div><div class="card"><h2>Backup e dados</h2><button id="importBtn" class="secondary">Importar backup</button><input id="importFile" type="file" accept="application/json" class="hidden"><button class="danger" id="resetAll">Apagar tudo</button><p class="hint">Os dados ficam salvos no navegador deste aparelho.</p></div></section>
+</main><script src="app.js"></script></body></html>
